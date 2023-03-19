@@ -17,6 +17,8 @@ int getPrior(char op) {
     return 3;
   case '/':
     return 3;
+  default:
+    return 10;
   }
 }
 
@@ -24,7 +26,7 @@ std::string infx2pstfx(std::string inf) {
   TStack <char, 100> st;
   std::string pstfx;
   bool isnum = false;
-  for (int i = 0; i < inf.length(); i++) {
+  for (unsigned int i = 0; i < inf.length(); i++) {
     if (isdigit(inf[i])) {
       if (!isnum) {
         pstfx.push_back(' ');
@@ -101,7 +103,7 @@ int eval(std::string pref) {
     pere.push_back(' ');
   }
   int op1, op2;
-  for (int i = 0; i < pere.length(); i++) {
+  for (unsigned int i = 0; i < pere.length(); i++) {
     if (pere[i] != ' ') {
       apstr.push_back(pere[i]);
     } else {
