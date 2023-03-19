@@ -48,8 +48,8 @@ std::string infx2pstfx(std::string inf) {
       }
       continue;
     }
-    if (inf[i] == '+' || inf[i] == '-' || inf[i] == '*' || inf[i] == '/' || inf[i] == '(' ) {
-      
+    if (inf[i] == '+' || inf[i] == '-' || inf[i] == '*'
+        || inf[i] == '/' || inf[i] == '(') {
       if (st.isEmpty()) {
          st.push(inf[i]);
          continue;
@@ -89,8 +89,7 @@ std::string infx2pstfx(std::string inf) {
   return pstfx.substr(1);
 }
 
-bool is_digits(const std::string &str)
-{
+bool is_digits(const std::string &str) {
   return str.find_first_not_of("0123456789") == std::string::npos;
 }
 
@@ -98,7 +97,7 @@ int eval(std::string pref) {
   TStack <int, 100> st;
   std::string apstr = "";
   std::string pere = pref;
-  if (pref[pref.length()-1]!=' '){
+  if (pref[pref.length()-1] != ' ') {
     pere.push_back(' ');
   }
   int op1, op2;
@@ -106,7 +105,7 @@ int eval(std::string pref) {
     if (pere[i] != ' ') {
       apstr.push_back(pere[i]);
     } else {
-      if (is_digits(apstr)){
+      if (is_digits(apstr)) {
         st.push(stoi(apstr));
       } else {
         op2 = st.get();
