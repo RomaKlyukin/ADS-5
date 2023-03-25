@@ -66,7 +66,7 @@ std::string infx2pstfx(std::string inf) {
       }
       if (getPrior(inf[i]) <= getPrior(st.get())) {
         while (true) {
-          if (getPrior(inf[i]) <= getPrior(st.get())) {
+          if (!st.isEmpty() && getPrior(inf[i]) <= getPrior(st.get())) {
             pstfx.push_back(' ');
             pstfx.push_back(st.get());
             st.pop();
