@@ -7,6 +7,7 @@ class TStack {
  private:
   T* arr;
   int top;
+  
  public:
   TStack() {
     arr = new T[size];
