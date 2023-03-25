@@ -29,7 +29,7 @@ class TStack {
     if (top < size-1)
       arr[++top] = item;
   }
-  ~TStack(){
+  ~TStack() {
     delete[] arr;
   }
 };
